@@ -51,6 +51,7 @@
       <ForcedIncludeFiles>C:\PlainProjects\ESP8266_MQTT\src\Libraries\PowerMeter_CS5460\PowerMeter_CS5460\__vm\.PowerMeter_CS5460.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__ESP8266_ESp8266__;__ESP8266_ESP8266__;_VMDEBUG=1;__ets__;ICACHE_FLASH;F_CPU=80000000L;ARDUINO=10609;ARDUINO_ESP8266_NODEMCU;ARDUINO_ARCH_ESP8266;ESP8266;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
