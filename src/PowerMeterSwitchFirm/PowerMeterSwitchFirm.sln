@@ -12,6 +12,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\Libraries\SwitchLib\SwitchLib.vcxitems*{a39ba6f8-e379-4746-91de-b62d5c01e4cc}*SharedItemsImports = 9
+		..\Libraries\SwitchLib\SwitchLib.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems*{45d41acc-2c3c-43d2-bc10-02aa73ffc7c7}*SharedItemsImports = 9
 	EndGlobalSection
