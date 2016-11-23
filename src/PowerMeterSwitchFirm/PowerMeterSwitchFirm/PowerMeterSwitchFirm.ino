@@ -4,8 +4,11 @@
  Author:	Victor
 */
 
+#include "SwitchLib.h"
 #include "PowerMeter_CS5460Lib.h"
 #include <RingBuf.h>
+
+SwitchLib relay(14);
 
 // the setup function runs once when you press reset or power the board
 void setup() {

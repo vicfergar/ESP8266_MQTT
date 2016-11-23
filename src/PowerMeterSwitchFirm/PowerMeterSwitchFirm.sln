@@ -7,8 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PowerMeterSwitchFirm", "Pow
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PowerMeter_CS5460Lib", "..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems", "{45D41ACC-2C3C-43D2-BC10-02AA73FFC7C7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwitchLib", "..\Libraries\SwitchLib\SwitchLib.vcxitems", "{A39BA6F8-E379-4746-91DE-B62D5C01E4CC}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\Libraries\SwitchLib\SwitchLib.vcxitems*{a39ba6f8-e379-4746-91de-b62d5c01e4cc}*SharedItemsImports = 9
 		..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems*{45d41acc-2c3c-43d2-bc10-02aa73ffc7c7}*SharedItemsImports = 9
 	EndGlobalSection
