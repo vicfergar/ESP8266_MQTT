@@ -1,8 +1,8 @@
 /*
- Name:		PowerMeter_CS5460Lib.h
- Created:	11/22/2016 7:52:37 PM
- Author:	Victor
- Editor:	http://www.visualmicro.com
+Name:		PowerMeter_CS5460Lib.h
+Created:	11/22/2016 7:52:37 PM
+Author:	Victor
+Editor:	http://www.visualmicro.com
 */
 
 #ifndef _PowerMeter_CS5460Lib_h
@@ -37,7 +37,7 @@ public:
 	static float current;
 	static float truePower;
 	static float powerFactor;
-	
+
 	static volatile int lostDataCount;
 
 	static void initialize(int clkPin, int sdoPin);
@@ -52,7 +52,7 @@ private:
 	static volatile bool _syncPulse;
 	static volatile bool _readyReceived;
 	static RingBuf *_dataBuf;
-	
+
 	static void inline resetTimer();
 	static void inline clockISR();
 	static void inline timerOVF();

@@ -1,27 +1,30 @@
 /*
- Name:		PowerMeter_CS5460Lib.cpp
- Created:	11/22/2016 7:52:37 PM
- Author:	Victor
- Editor:	http://www.visualmicro.com
+Name:		PowerMeter_CS5460Lib.cpp
+Created:	11/22/2016 7:52:37 PM
+Author:	Victor
+Editor:	http://www.visualmicro.com
 */
 
 #include "PowerMeter_CS5460Lib.h"
+
+float PowerMeter_CS5460::voltage = 0;
+float PowerMeter_CS5460::current = 0;
+float PowerMeter_CS5460::truePower = 0;
+float PowerMeter_CS5460::powerFactor = 0;
+int PowerMeter_CS5460::_clkPin;
+int PowerMeter_CS5460::_sdoPin;
+
+volatile int PowerMeter_CS5460::lostDataCount = 0;
+volatile uint32_t PowerMeter_CS5460::_sniffRegister = 0;
+volatile uint8_t PowerMeter_CS5460::_bitsForNextData;
+volatile bool PowerMeter_CS5460::_syncPulse = false;
+volatile bool PowerMeter_CS5460::_readyReceived = false;
+RingBuf *PowerMeter_CS5460::_dataBuf = RingBuf_new(sizeof(uint32_t), BUFSIZE);
 
 void PowerMeter_CS5460::initialize(int clkPin, int sdoPin)
 {
 	_clkPin = clkPin;
 	_sdoPin = sdoPin;
-
-	voltage = 0;
-	current = 0;
-	truePower = 0;
-	powerFactor = 0;
-	lostDataCount = 0;
-
-	_sniffRegister = 0;
-	_syncPulse = false;
-	_readyReceived = false;
-	_dataBuf = RingBuf_new(sizeof(uint32_t), BUFSIZE);
 
 	// Setting up interrupt ISR on D2 (INT0), trigger function "clockISR()" when INT0 (CLK) is rising
 	attachInterrupt(digitalPinToInterrupt(_clkPin), clockISR, RISING);
@@ -44,7 +47,7 @@ void inline PowerMeter_CS5460::resetTimer()
 	timer0_write((ESP.getCycleCount() + offset));
 }
 
-inline void PowerMeter_CS5460::timerOVF()
+void inline PowerMeter_CS5460::timerOVF()
 {
 	// Went ~20ms without a clock pulse, probably in an inter-frame period; reset sync
 	_syncPulse = true;
@@ -53,7 +56,7 @@ inline void PowerMeter_CS5460::timerOVF()
 	resetTimer();
 }
 
-inline void PowerMeter_CS5460::clockISR()
+void inline PowerMeter_CS5460::clockISR()
 {
 	PowerMeter_CS5460::resetTimer();
 

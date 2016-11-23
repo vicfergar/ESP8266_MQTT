@@ -32,6 +32,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="..\..\Libraries\PowerMeter_CS5460\PowerMeter_CS5460.vcxitems" Label="Shared" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -45,10 +48,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\cores\esp8266;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\cores\esp8266\libb64;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\cores\esp8266\spiffs;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\cores\esp8266\umm_malloc;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\variants\nodemcu;C:\PlainProjects\ESP8266_MQTT\src\PowerMeterSwitchFirm\PowerMeterSwitchFirm;C:\Users\Victor\Documents\Arduino\libraries\RingBuf;C:\Users\Victor\Documents\Arduino\libraries\RingBuf\utility;C:\Program Files (x86)\Arduino\libraries;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\libraries;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\b0dcqxuk.ubq\Micro Platforms\default\debuggers;C:\Users\Victor\Documents\Arduino\libraries;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0/tools/sdk/include;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0/tools/sdk/lwip/include;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\lib\gcc\xtensa-lx106-elf\4.8.2\include;C:\Users\Victor\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.2.0\tools\sdk\include;C:\PlainProjects\ESP8266_MQTT\src\Libraries\PowerMeter_CS5460;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\PlainProjects\ESP8266_MQTT\src\PowerMeterSwitchFirm\PowerMeterSwitchFirm\__vm\.PowerMeterSwitchFirm.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>__ESP8266_ESp8266__;__ESP8266_ESP8266__;_VMDEBUG=1;__ets__;ICACHE_FLASH;F_CPU=80000000L;ARDUINO=10609;ARDUINO_ESP8266_NODEMCU;ARDUINO_ARCH_ESP8266;ESP8266;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -73,7 +76,15 @@
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.PowerMeterSwitchFirm.vsarduino.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties arduino.build.auto_discover_includes="0" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
